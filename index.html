@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Isban-Demo</title>
+    <!-- stylesheet -->
+    <link href="libs/css/reset.css" rel="stylesheet">
+    <link href="libs/css/style.css" rel="stylesheet">
+    <!-- angular js -->
+    <script src="libs/js/angular/angular.min.js"></script>
+  </head>
+  <body ng-app="myApp" ng-controller="Ctrl" ng-init="loadPage">
+    <header>
+      <nav class="navbar">
+        <ul>
+            <li>
+              <a href="#">
+                <i class="menu" aria-hidden="true"></i>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="search" aria-hidden="true"></i>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="user" aria-hidden="true"></i>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="user__group" aria-hidden="true"></i>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="faq" aria-hidden="true"></i>
+              </a>
+            </li>
+        </ul>
+        <h1 class="logo">
+          {{isban.logo}}
+        </h1>
+        <a class="nav__username" href="#">{{isban.username_text}}</a>
+      </nav>
+    </header>
+    <aside class="left-sidebar">
+
+      <div class="user__profile">
+          <a href="#" class="logo_text">
+            {{isban.logo}}
+          </a>
+          <span class="user__details">
+           {{isban.username}}
+          </span>
+          <span class="user__dob">
+            {{isban.username_dob}}
+          </span>
+          <span class="user__type">
+            {{isban.username_type}}
+          </span>
+      </div>
+      <div class="user__aside--help">
+          <ul>
+            <li>
+              <a href="#">
+                <i class="info--white"></i>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="info--white"></i>
+              </a>
+            </li>
+          </ul>
+      </div>
+      <ul class="sidebarnav">
+          <li class="list--miro">
+              <a href="#">
+                  <i class="info--white"></i>
+                  <span>{{isban.nav_micro_text}}</span>
+              </a>
+          </li>
+          <li class="list--info">
+              <a href="#">
+                  <i class="info--white"></i>
+                  <span>{{isban.nav_information_text}}</span>
+                  <span class="warning counter">{{isban.nav_information_value}}</span>
+              </a>
+          </li>
+          <li class="list--notes">
+              <a href="#">
+                  <i class="info--white"></i>
+                  <span>{{isban.nav_notes_text}}</span>
+              </a>
+          </li>
+      </ul>
+      <ul class="sidebar__footer">
+          <li>
+              <a href="#">
+                  <i class="info--white"></i>
+                  <span>{{isban.username_address}}</span>
+              </a>
+          </li>
+      </ul>
+    </aside>
+    <section class="page-wrapper" role="main__contentinfo">
+        <h2>{{isban.carousel_one_text}} </h2>
+        <a href="#">
+          <span class="carousel__item-list"></span>
+        </a>
+        <ul class="carousel-items">
+          <li>
+              <a href="#">
+                  <span class="carousel--ribbon">
+                    {{isban.carousel_ribbon_negative}}
+                  </span>
+                  <p>{{isban.carousel_text}}</p>
+              </a>
+          </li>
+          <li>
+              <a href="#">
+                <p>{{isban.carousel_text}}</p>
+              </a>
+          </li>
+        </ul>
+        <h2>
+          {{isban.carousel_two_text}} 
+          <a href="#">
+            <span class="add--icon"></span> 
+          </a>
+        </h2>
+        <a href="#">
+          <span class="carousel__item-list"></span>
+        </a>
+        <ul class="carousel-items">
+          <li class="father__son">
+              <a href="#">
+                <span class="carousel--ribbon green">
+                  {{isban.carousel_ribbon_positive}}
+                </span>
+                <p class="hidden">{{isban.carousel_text}}</p>
+              </a>
+          </li>
+          <li class="mother">
+              <a href="#">
+                <p class="hidden">{{isban.carousel_text}}</p>
+              </a>
+          </li>
+        </ul>
+    </section>
+    <aside class="right-sidebar">
+        <h2>{{isban.isban_product_text}}</h2>
+        <button class="btn__header">{{isban.isban_button_text}}</button>
+        <ul class="tiles">
+          <li>
+              <i></i>
+              <div class="products">
+                  <span class="product__title">
+                    {{isban.isban_product_one_text}}
+                  </span>
+                  <span class="product__price">
+                    {{isban.isban_product_one_price}}
+                  </span>
+              </div>
+              <span class="counter">{{isban.isban_product_text_two}}</span>
+          </li>
+          <li class="inactive">
+              <i></i>
+              <div class="products">
+                  <span class="product__title">
+                    {{isban.isban_product_two_text}}
+                  </span>
+              </div>
+              
+          </li>
+           <li>
+              <i></i>
+              <div class="products">
+                  <span class="product__title">
+                    {{isban.isban_product_three_text}}
+                  </span>
+                  <span class="product__price">
+                    {{isban.isban_product_three_price}}
+                  </span>
+              </div>
+              <span class="counter">{{isban.isban_product_text_one}}</span>
+          </li>
+          <li>
+              <i></i>
+              <div class="products">
+                  <span class="product__title">
+                    {{isban.isban_product_four_text}}
+                  </span>
+                  <span class="product__price">
+                    {{isban.isban_product_four_price}}
+                  </span>
+              </div>
+              <span class="counter">{{isban.isban_product_text_one}}</span>
+          </li>
+           <li class="inactive">
+              <i></i>
+              <div class="products">
+                  <span class="product__title">
+                    {{isban.isban_product_five_text}}
+                  </span>
+              </div>
+          </li>
+          <li class="inactive">
+              <i></i>
+              <div class="products">
+                  <span class="product__title">
+                    {{isban.isban_product_six_text}}
+                  </span>
+              </div>
+          </li>
+           <li class="inactive">
+              <i></i>
+              <div class="products">
+                  <span class="product__title">
+                    {{isban.isban_product_seven_text}}
+                  </span>
+              </div>
+          </li>
+          <li>
+              <i></i>
+              <div class="products">
+                  <span class="product__title">
+                    {{isban.isban_product_eight_text}}
+                  </span>
+                  <span class="product__price">
+                    {{isban.isban_product_eight_price}}
+                  </span>
+              </div>
+              <span class="counter">{{isban.isban_product_text_one}}</span>
+          </li>
+          <li class="inactive">
+              <i></i>
+              <div class="products">
+                  <span class="product__title">
+                    {{isban.isban_product_eight_text}}
+                  </span>
+              </div>              
+          </li>
+           <li>
+              <i></i>
+              <div class="products">
+                  <span class="product__title">
+                    {{isban.isban_product_nine_text}}
+                  </span>
+                  <span class="product__price">
+                    {{isban.isban_product_nine_price}}
+                  </span>
+              </div>
+          </li>
+          <li class="tile--wider">
+              <div class="products">
+                  <span class="product__title">
+                    {{isban.isban_product_ten_text}}
+                  </span>
+                  <span class="product__text">
+                    {{isban.carousel_text}}
+                  </span>
+                  <button class="btn__header xs">{{isban.isban_button_text_xs}}</button>
+                  <button class="btn__header">{{isban.isban_button_text_ms}}</button>
+              </div>
+          </li>
+        </ul>
+    </aside>
+    <footer role="footer__contentinfo">
+          
+            <ul class="appointment--list">
+                <li>
+                    <i></i>
+                    <div class="appointment__wrapper">
+                        <span class="appointment__title">
+                          {{isban.appointment_date_one}}
+                        </span>
+                        <span class="appointment__desc">
+                          {{isban.appointment_subText_one}}
+                        </span>
+                        <span class="appointment__desc">
+                          {{isban.appointment_subText_two}}
+                        </span>
+                    </div>
+                </li>
+                <li>
+                    <i></i>
+                    <div class="appointment__wrapper">
+                        <span class="appointment__title">
+                          {{isban.appointment_date_two}}
+                        </span>
+                        <span class="appointment__desc">
+                          {{isban.appointment_subText_one}}
+                        </span>
+                        <span class="appointment__desc">
+                          {{isban.appointment_subText_two}}
+                        </span>
+                    </div>
+                </li>
+                <li>
+                    <i></i>
+                    <div class="appointment__wrapper">
+                        <span class="appointment__title">
+                          {{isban.appointment_date_three}}
+                        </span>
+                        <span class="appointment__desc">
+                          {{isban.appointment_subText_one}}
+                        </span>
+                        <span class="appointment__desc">
+                          {{isban.appointment_subText_two}}
+                        </span>
+                    </div>
+                </li>
+                <li>
+                    <i></i>
+                    <div class="appointment__wrapper">
+                        <span class="appointment__title">
+                          {{isban.appointment_date_four}}
+                        </span>
+                        <span class="appointment__desc">
+                          {{isban.appointment_subText_one}}
+                        </span>
+                        <span class="appointment__desc">
+                          {{isban.appointment_subText_two}}
+                        </span>
+                    </div>
+                </li>
+                <li>
+                    <hr class="appointment--active" />
+                    <i></i>
+                    <div class="appointment__wrapper">
+                        <span class="appointment__title">
+                          {{isban.appointment_date_five}}
+                        </span>
+                        <span class="appointment__desc">
+                          {{isban.appointment_subText_one}}
+                        </span>
+                        <span class="appointment__desc">
+                          {{isban.appointment_subText_two}}
+                        </span>
+                    </div>
+                </li>
+                
+            </ul>
+    </footer>
+  </body>
+   <script src="libs/js/core.js"></script>
+</html>
